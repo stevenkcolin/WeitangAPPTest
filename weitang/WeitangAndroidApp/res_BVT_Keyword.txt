@@ -1,0 +1,43 @@
+*** Settings ***
+Resource          res_BVT_Keyword_Impl.txt
+
+*** Keywords ***
+手机登录微糖
+    [Arguments]    ${phonenum}    ${password}
+    启动微糖    ${appPath}
+    点击已有微糖账号
+    输入账号密码    ${phonenum}    ${password}
+    在欢迎页面滑动到底并点击进入微糖
+    点掉我知道_进入微糖
+    检查首页元素
+    ${str}    Test Dev Branch
+    log    ${str}
+
+添加血糖
+    点击首页添加血糖
+    编辑血糖保存
+    点击添加血糖我知道
+
+点击检查医服务页面
+    点击医服务Tab
+    检查医服务页面
+
+点击检查控血糖
+    点击控血糖Tab
+    检查首页元素
+
+点击检查甜甜圈
+    点击甜甜圈
+    检查甜甜圈页面
+
+点击检查我的
+    点击我的
+    检查我的
+
+添加身高体重
+    [Arguments]    ${height}    ${weight}    ${comments}
+    点击控血糖Tab
+    点击更多
+    点击身高体重
+    点击记录身高体重
+    输入身高体重并保存    ${height}    ${weight}    ${comments}

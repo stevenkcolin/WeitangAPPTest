@@ -1,0 +1,7 @@
+*** Settings ***
+Resource          demo_startup_resource.txt
+
+*** Test Cases ***
+demo1
+    StartupDemo    ${demo_app_filepath}
+    GetDemoAttributes

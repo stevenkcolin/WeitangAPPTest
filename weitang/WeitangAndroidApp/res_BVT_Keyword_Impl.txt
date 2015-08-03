@@ -1,0 +1,105 @@
+*** Settings ***
+Resource          res_BVT_Parameter.txt
+Library           AppiumLibrary
+
+*** Keywords ***
+点击已有微糖账号
+    Comment    先点击首页里面的已有微糖账号，用手机号码和密码登录
+    Wait Until Page Contains Element    id=${id_login_forward}
+    Click Element    id=${id_login_forward}
+
+输入账号密码
+    [Arguments]    ${phonenum}    ${password}
+    Comment    输入手机号码和密码并登录
+    log    ${phonenum}
+    log    ${password}
+    Wait Until Page Contains Element    id=${id_login_edit_tel}
+    Input Text    id=${id_login_edit_tel}    ${phonenum}
+    Click Element    id=${id_login_edit_password}
+    Input Text    id=${id_login_edit_password}    ${password}
+    Click Element    id=${id_login_btn_login}
+
+在欢迎页面滑动到底并点击进入微糖
+    Comment    向上滑动页面，点击底部的进入微糖
+    Wait Until Page Contains    ${txt_welcome_checkword}
+    : FOR    ${index}    IN RANGE    4
+    \    get swipe start end    3    5    up
+    Click Element    id=${id_welcome_btn_enter}
+
+点掉我知道_进入微糖
+    Comment    点掉我知道进入微糖
+    Wait Until Page Contains Element    id=${id_gift_image_gift_center}
+    Click Element    id=${id_gift_image_gift_center}
+
+启动微糖
+    [Arguments]    ${appPath}
+    Comment    启动糖友，已实现
+    Open Application    ${REMOTE_URL}    platformName=Android    platformVersion=4.4.4    deviceName=HC49BZ002174    app=${appPath}    udid=13ea7585
+    Log Source
+
+点击首页添加血糖
+    Comment    点击首页添加血糖，已实现
+    Wait Until Page Contains Element    id=${shouye_id_btn_blood_sugar_add}
+    Click Element    id=${shouye_id_btn_blood_sugar_add}
+
+编辑血糖保存
+    Comment    不输入任何值，直接点保存按钮
+    Wait Until Page Contains Element    id=${editbloodsugar_id_btn_save}
+    Click Element    id=${editbloodsugar_id_btn_save}
+
+点击添加血糖我知道
+    Comment    点击我知道
+    Wait Until Page Contains Element    id=${editbloodsugar_id_btn_i_know}
+    Click Element    id=${editbloodsugar_id_btn_i_know}
+
+点击医服务Tab
+    Wait Until Page Contains Element    id=${shouye_id_btn_chat_doctor}
+    Click Element    id=${shouye_id_btn_chat_doctor}
+
+检查医服务页面
+    Wait Until Page Contains Element    id=${chat_doctor_id_btn_doctor}
+    Page Should Contain Element    id=${chat_doctor_id_btn_doctor}
+    Page Should Contain Element    id=${chat_doctor_id_btn_dietician}
+    Page Should Contain Element    id=${chat_doctor_id_btn_welltang_team}
+    Page Should Contain Text    ${chatdoctor_checktext}
+    Capture Page Screenshot
+
+点击控血糖Tab
+    Wait Until Page Contains Element    id=${shouye_id_btn_control_blood_sugar}
+    Click Element    id=${shouye_id_btn_control_blood_sugar}
+
+检查首页元素
+    Comment    检查是否存在添加血糖按钮
+    Page Should Contain Element    id=${shouye_id_btn_blood_sugar_add}
+    Capture Page Screenshot
+
+点击甜甜圈
+    Wait Until Page Contains Element    id=${shouye_id_btn_donut}
+    Click Element    id=${shouye_id_btn_donut}
+
+检查甜甜圈页面
+    Wait Until Page Contains    ${donut_checktext}
+    Page Should Contain Text    ${donut_checktext}
+    Capture Page Screenshot
+
+点击我的
+    Wait Until Page Contains Element    id=${shouye_id_btn_personal}
+    Click Element    id=${shouye_id_btn_personal}
+
+检查我的
+    Wait Until Page Contains    ${personal_checktext}
+    Page Should Contain Text    ${personal_checktext}
+    Capture Page Screenshot
+
+点击更多
+    log    冬梅实现点击更多
+
+点击身高体重
+    log    云姣实现
+
+点击记录身高体重
+    log    冬梅
+
+输入身高体重并保存
+    [Arguments]    ${height}    ${weight}    ${width}
+    log    冬梅

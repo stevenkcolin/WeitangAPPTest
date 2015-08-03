@@ -1,0 +1,29 @@
+*** Settings ***
+Force Tags
+Resource          res_BVT_Keyword.txt
+Resource          test_data_BVT_PRD.txt
+
+*** Test Cases ***
+登录
+    [Tags]    chenlin1
+    [Template]    手机登录微糖
+    ${phoneNum}    ${password}
+
+添加血糖
+    添加血糖
+
+检查医服务页面
+    点击检查医服务页面
+
+检查甜甜圈
+    [Tags]    chenlin1
+    点击检查甜甜圈
+
+检查我的
+    点击检查我的
+
+检查控血糖页面
+    点击检查控血糖
+
+身高体重
+    添加身高体重    ${height}    ${weight}    ${comment}

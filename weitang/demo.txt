@@ -1,0 +1,9 @@
+*** Settings ***
+Documentation     *测试selenium2browser*
+...               *测试基本操作*
+Library           Selenium2Library
+
+*** Test Cases ***
+open web browser
+    Open Browser    http://www.baidu.com
+    Sleep    60

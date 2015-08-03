@@ -1,0 +1,52 @@
+*** Settings ***
+Library           AppiumLibrary    run_on_failure=AppiumLibrary.Log Source
+
+*** Variables ***
+${demo_app_filepath}    /Users/linchen/code/OrangeDemoApp.apk
+${weitang_app_filepath}    /Users/linchen/code/welltang_patient-baiduAs-release.apk
+${REMOTE_URL}     http://localhost:4723/wd/hub
+${textviewId}     com.netease.qa.orangedemo:id/textView1
+${txt_viewTest}    ViewTest
+${id_txt_textview}    com.netease.qa.orangedemo:id/textView1
+${id_btn_viewtest}    com.netease.qa.orangedemo:id/test_item
+${id_start_welltang}    com.byb.patient:id/effectBtn_start_welltang
+${id_login_forward}    com.byb.patient:id/effectLayout_login_forward
+
+*** Keywords ***
+StartupDemo
+    [Arguments]    ${input1}
+    Open Application    ${REMOTE_URL}    platformName=Android    platformVersion=4.4.4    deviceName=Android Emulator    app=${input1}
+    Log Source
+
+GetDemoAttributes
+    Comment    sleep    2
+    Comment    AppiumLibrary.Click Element    name=ViewTest
+    Comment    sleep    2
+    Comment    ${a}    Set Variable    Get Text    name=ViewTest
+    Comment    ${b}    Get Text    name=ViewTest
+    Comment    Click Element    name=EditTextTest
+    ${a1}    Get Name    name=ViewTest
+    ${a2}    Get Text    name=ViewTest
+    ${a3}    Get Id    name=ViewTest
+    ${a4}    Get Classname    name=ViewTest
+    ${b}    Get Checkable    name=ViewTest
+    ${c}    Get Checked    name=ViewTest
+    ${d}    Get Clickable    name=ViewTest
+    ${e}    Get Enabled    name=ViewTest
+    ${f}    Get Focusable    name=ViewTest
+    ${g}    Get Focused    name=ViewTest
+    ${h}    Get Scrollable    name=ViewTest
+    ${i}    Get Selected    name=ViewTest
+    ${sx}    ${sy}    ${ex}    ${ey}    Get Bounds    name=ViewTest
+
+Demo_Startup
+    StartupDemo
+    GetDemoAttributes
+
+Click_Start_Welltang
+    Wait Until Page Contains Element    id=${id_start_welltang}
+    Click Element    id=${id_start_welltang}
+
+Click_Login_Forward
+    Wait Until Page Contains Element    id=${id_login_forward}
+    Click Element    id=${id_login_forward}

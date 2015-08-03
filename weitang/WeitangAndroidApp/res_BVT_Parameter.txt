@@ -1,0 +1,24 @@
+*** Variables ***
+${REMOTE_URL}     http://localhost:4723/wd/hub
+${appPath}        /Users/linchen/code/welltang_patient-baiduAs-release.apk
+${id_start_weitang}    com.byb.patient:id/effectBtn_start_welltang
+${id_login_forward}    com.byb.patient:id/effectLayout_login_forward
+${id_login_edit_tel}    com.byb.patient:id/edit_tel
+${id_login_edit_password}    com.byb.patient:id/edit_password
+${id_login_btn_login}    com.byb.patient:id/btn_login
+${txt_welcome_checkword}    微糖
+${id_welcome_btn_enter}    com.byb.patient:id/btn_enter
+${id_gift_image_gift_center}    com.byb.patient:id/image_gift_center
+${shouye_id_btn_blood_sugar_add}    com.byb.patient:id/effectLayout_blood_sugar_add
+${editbloodsugar_id_btn_save}    com.byb.patient:id/ll_nav_right
+${editbloodsugar_id_btn_i_know}    com.byb.patient:id/btn_i_know
+${shouye_id_btn_chat_doctor}    com.byb.patient:id/radiobtn_chat_doctor
+${shouye_id_btn_donut}    com.byb.patient:id/radiobtn_donut
+${shouye_id_btn_personal}    com.byb.patient:id/radiobtn_personal
+${shouye_id_btn_control_blood_sugar}    com.byb.patient:id/radiobtn_control_blood_sugar
+${chat_doctor_id_btn_doctor}    com.byb.patient:id/effectBtn_doctor
+${chat_doctor_id_btn_dietician}    com.byb.patient:id/effectBtn_dietician
+${chat_doctor_id_btn_welltang_team}    com.byb.patient:id/effectBtn_welltang_team
+${donut_checktext}    甜甜圈
+${personal_checktext}    控糖档案
+${chatdoctor_checktext}    医服务

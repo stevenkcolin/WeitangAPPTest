@@ -1,0 +1,6 @@
+*** Variables ***
+${phoneNum}       18621790130
+${password}       12345678
+${height}         180
+${weight}         70
+${comment}        comment111111
