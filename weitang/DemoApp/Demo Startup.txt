@@ -5,3 +5,7 @@ Resource          demo_startup_resource.txt
 demo1
     StartupDemo    ${demo_app_filepath}
     GetDemoAttributes
+
+demo2
+    ${teststr}    Test Return 0803002
+    log    ${teststr}

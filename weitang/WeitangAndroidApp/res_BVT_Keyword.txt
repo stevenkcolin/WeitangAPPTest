@@ -10,8 +10,6 @@ Resource          res_BVT_Keyword_Impl.txt
     在欢迎页面滑动到底并点击进入微糖
     点掉我知道_进入微糖
     检查首页元素
-    ${str}    Test Dev Branch
-    log    ${str}
 
 添加血糖
     点击首页添加血糖
